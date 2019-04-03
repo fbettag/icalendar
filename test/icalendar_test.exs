@@ -52,14 +52,14 @@ defmodule ICalendarTest do
            PRODID:-//ICalendar//ICalendar//EN
            BEGIN:VEVENT
            DESCRIPTION:Let's go see Star Wars.
-           DTEND;TZID=Etc/UTC:20151224T084500
-           DTSTART;TZID=Etc/UTC:20151224T083000
+           DTEND:20151224T084500
+           DTSTART:20151224T083000
            SUMMARY:Film with Amy and Adam
            END:VEVENT
            BEGIN:VEVENT
            DESCRIPTION:A big long meeting with lots of details.
-           DTEND;TZID=Etc/UTC:20151224T223000
-           DTSTART;TZID=Etc/UTC:20151224T190000
+           DTEND:20151224T223000
+           DTSTART:20151224T190000
            SUMMARY:Morning meeting
            END:VEVENT
            END:VCALENDAR
@@ -86,8 +86,8 @@ defmodule ICalendarTest do
            PRODID:-//ICalendar//ICalendar//EN
            BEGIN:VEVENT
            DESCRIPTION:Let's go see Star Wars\\, and have fun.
-           DTEND;TZID=Etc/UTC:20151224T084500
-           DTSTART;TZID=Etc/UTC:20151224T083000
+           DTEND:20151224T084500
+           DTSTART:20151224T083000
            LOCATION:123 Fun Street\\, Toronto ON\\, Canada
            SUMMARY:Film with Amy and Adam
            END:VEVENT
@@ -144,16 +144,16 @@ defmodule ICalendarTest do
            PRODID:-//ICalendar//ICalendar//EN
            BEGIN:VEVENT
            DESCRIPTION:Let's go see Star Wars.
-           DTEND;TZID=Etc/UTC:20151224T084500
-           DTSTAMP;TZID=Etc/UTC:20151224T080000
-           DTSTART;TZID=Etc/UTC:20151224T083000
+           DTEND:20151224T084500
+           DTSTAMP:20151224T080000
+           DTSTART:20151224T083000
            SUMMARY:Film with Amy and Adam
            END:VEVENT
            BEGIN:VEVENT
            DESCRIPTION:A big long meeting with lots of details.
-           DTEND;TZID=Etc/UTC:20151224T223000
-           DTSTAMP;TZID=Etc/UTC:20151224T180000
-           DTSTART;TZID=Etc/UTC:20151224T190000
+           DTEND:20151224T223000
+           DTSTAMP:20151224T180000
+           DTSTART:20151224T190000
            SUMMARY:Morning meeting
            END:VEVENT
            END:VCALENDAR
@@ -189,16 +189,16 @@ defmodule ICalendarTest do
            PRODID:-//ICalendar//ICalendar//EN
            BEGIN:VEVENT
            DESCRIPTION:Let's go see Star Wars.
-           DTEND;TZID=Etc/UTC:20151224T084500
-           DTSTAMP;TZID=Etc/UTC:20151224T080000
-           DTSTART;TZID=Etc/UTC:20151224T083000
+           DTEND:20151224T084500
+           DTSTAMP:20151224T080000
+           DTSTART:20151224T083000
            SUMMARY:Film with Amy and Adam
            END:VEVENT
            BEGIN:VEVENT
            DESCRIPTION:A big long meeting with lots of details.
-           DTEND;TZID=Etc/UTC:20151224T223000
-           DTSTAMP;TZID=Etc/UTC:20151224T180000
-           DTSTART;TZID=Etc/UTC:20151224T190000
+           DTEND:20151224T223000
+           DTSTAMP:20151224T180000
+           DTSTART:20151224T190000
            SUMMARY:Morning meeting
            END:VEVENT
            END:VCALENDAR
