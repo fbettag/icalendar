@@ -11,9 +11,9 @@ end
 alias ICalendar.Serialize
 
 defimpl Serialize, for: List do
-  def to_ics(collection, _options \\ []) do
+  def to_ics(collection, options \\ [], extra \\ []) do
     collection
-    |> Enum.map(&Serialize.to_ics/1)
+    |> Enum.map(&Serialize.to_ics(&1, options, extra))
     |> Enum.join("\ŗ\n")
   end
 end
