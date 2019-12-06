@@ -28,7 +28,7 @@ defmodule ICalendarTest do
   end
 
   test "ICalendar.to_ics/1 of empty calendar with extra parameters" do
-    ics = %ICalendar{} |> ICalendar.to_ics([], "refresh-interval": "DURATION:P1W", source: "URI:http://some.where/foo.ics")
+    ics = %ICalendar{} |> ICalendar.to_ics([], ["REFRESH-INTERVAL;DURATION:P1W", "SOURCE;URI:http://some.where/foo.ics"])
 
     assert ics == """
            BEGIN:VCALENDAR\r

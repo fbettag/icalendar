@@ -45,19 +45,14 @@ defimpl ICalendar.Serialize, for: ICalendar do
   def to_ics(calendar, options \\ [], extra \\ []) do
     events = Enum.map(calendar.events, &ICalendar.Serialize.to_ics/1)
     vendor = Keyword.get(options, :vendor, "ICalendar")
-    extra = Enum.reduce(extra, "", fn {ek, ev}, acc ->
-      ek = ek
-           |> Atom.to_string()
-           |> String.upcase()
-      acc <> "#{ek};#{ev}\r\n"
-    end)
+    extra_string = if Enum.empty?(extra) do "" else Enum.join(extra, "\r\n") <> "\r\n" end
 
     """
     BEGIN:VCALENDAR\r
     CALSCALE:GREGORIAN\r
     VERSION:2.0\r
     PRODID:-//ICalendar//#{vendor}//EN\r
-    #{extra}#{events}END:VCALENDAR\r
+    #{extra_string}#{events}END:VCALENDAR\r
     """
   end
 end
