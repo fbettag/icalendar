@@ -9,7 +9,7 @@ defmodule ICalendar.Util.KV do
   Convert a key and value to an iCal line:
 
     iex> ICalendar.Util.KV.build("foo", "bar")
-    "foo:bar\n"
+    "foo:bar\r\n"
 
   Don't add empty values:
 
@@ -22,7 +22,7 @@ defmodule ICalendar.Util.KV do
     ...>   {{2015, 12, 24}, {8, 30, 0}}
     ...>   |> Timex.to_datetime("America/Chicago")
     ...> ICalendar.Util.KV.build("foo", date)
-    "foo;TZID=America/Chicago:20151224T083000\n"
+    "foo;TZID=America/Chicago:20151224T083000\r\n"
   """
   def build(_, nil) do
     ""
@@ -37,7 +37,7 @@ defmodule ICalendar.Util.KV do
   end
 
   def build("CATEGORIES", value) do
-    "CATEGORIES:#{Enum.join(Value.to_ics(value), ",")}\n"
+    "CATEGORIES:#{Enum.join(Value.to_ics(value), ",")}\r\n"
   end
 
   def build("STATUS" = key, value) do
@@ -49,23 +49,23 @@ defmodule ICalendar.Util.KV do
   end
 
   def build("GEO" = key, {lat, lon}) do
-    "#{key}:#{lat};#{lon}\n"
+    "#{key}:#{lat};#{lon}\r\n"
   end
 
   def build(key, date = %DateTime{time_zone: "Etc/UTC"}) do
-    "#{key}:#{Value.to_ics(date)}\n"
+    "#{key}:#{Value.to_ics(date)}\r\n"
   end
 
   def build(key, date = %DateTime{}) do
-    "#{key};TZID=#{date.time_zone}:#{Value.to_ics(date)}\n"
+    "#{key};TZID=#{date.time_zone}:#{Value.to_ics(date)}\r\n"
   end
 
   def build(key, value) do
-    "#{key}:#{Value.to_ics(value)}\n"
+    "#{key}:#{Value.to_ics(value)}\r\n"
   end
 
   defp build_sanitized(key, value) do
-    "#{key}:#{sanitize(value)}\n"
+    "#{key}:#{sanitize(value)}\r\n"
   end
 
   defp sanitize(string) when is_bitstring(string) do

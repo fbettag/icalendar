@@ -10,7 +10,7 @@ defimpl ICalendar.Deserialize, for: BitString do
   def from_ics(ics) do
     ics
     |> String.trim()
-    |> String.split("\n")
+    |> String.split("\r\n")
     |> Enum.map(&String.trim_trailing/1)
     |> Deserialize.build_event()
   end

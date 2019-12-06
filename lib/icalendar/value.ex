@@ -8,8 +8,10 @@ alias ICalendar.Value
 defimpl Value, for: BitString do
   def to_ics(x) do
     x
-    |> String.replace(~S"\n", ~S"\\n")
-    |> String.replace("\n", ~S"\n")
+    |> String.replace(~S"\r\n", ~S"\\r\\n")
+    |> String.replace("\r\n", ~S"\r\n")
+    #|> String.replace(~S"\n", ~S"\\n")
+    #|> String.replace("\n", ~S"\n")
   end
 end
 

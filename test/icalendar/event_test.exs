@@ -7,8 +7,8 @@ defmodule ICalendar.EventTest do
     ics = %Event{} |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           END:VEVENT
+           BEGIN:VEVENT\r
+           END:VEVENT\r
            """
   end
 
@@ -22,11 +22,11 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           COMMENT:Don't forget to take something to eat !
-           DESCRIPTION:Escape from the world. Stare at some water.
-           SUMMARY:Going fishing
-           END:VEVENT
+           BEGIN:VEVENT\r
+           COMMENT:Don't forget to take something to eat !\r
+           DESCRIPTION:Escape from the world. Stare at some water.\r
+           SUMMARY:Going fishing\r
+           END:VEVENT\r
            """
   end
 
@@ -39,10 +39,10 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           DTEND:20151224
-           DTSTART:20151224
-           END:VEVENT
+           BEGIN:VEVENT\r
+           DTEND:20151224\r
+           DTSTART:20151224\r
+           END:VEVENT\r
            """
   end
 
@@ -55,10 +55,10 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           DTEND:20151224T084500
-           DTSTART:20151224T083000
-           END:VEVENT
+           BEGIN:VEVENT\r
+           DTEND:20151224T084500\r
+           DTSTART:20151224T083000\r
+           END:VEVENT\r
            """
   end
 
@@ -76,10 +76,10 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           DTEND;TZID=America/Chicago:20151224T084500
-           DTSTART;TZID=America/Chicago:20151224T083000
-           END:VEVENT
+           BEGIN:VEVENT\r
+           DTEND;TZID=America/Chicago:20151224T084500\r
+           DTSTART;TZID=America/Chicago:20151224T083000\r
+           END:VEVENT\r
            """
   end
 
@@ -94,10 +94,10 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           DESCRIPTION:See this link http://example.com/pub/calendars/jsmith/mytime.ics
-           SUMMARY:Going fishing
-           END:VEVENT
+           BEGIN:VEVENT\r
+           DESCRIPTION:See this link http://example.com/pub/calendars/jsmith/mytime.ics\r
+           SUMMARY:Going fishing\r
+           END:VEVENT\r
            """
   end
 
@@ -109,9 +109,9 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           URL:http://example.com/pub/calendars/jsmith/mytime.ics
-           END:VEVENT
+           BEGIN:VEVENT\r
+           URL:http://example.com/pub/calendars/jsmith/mytime.ics\r
+           END:VEVENT\r
            """
   end
 
@@ -123,9 +123,9 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           UID:815
-           END:VEVENT
+           BEGIN:VEVENT\r
+           UID:815\r
+           END:VEVENT\r
            """
   end
 
@@ -137,9 +137,9 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           UID:0815
-           END:VEVENT
+           BEGIN:VEVENT\r
+           UID:0815\r
+           END:VEVENT\r
            """
   end
 
@@ -151,9 +151,9 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           GEO:43.6978819;-79.3810277
-           END:VEVENT
+           BEGIN:VEVENT\r
+           GEO:43.6978819;-79.3810277\r
+           END:VEVENT\r
            """
   end
 
@@ -165,9 +165,9 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           CATEGORIES:Fishing,Nature,Sport
-           END:VEVENT
+           BEGIN:VEVENT\r
+           CATEGORIES:Fishing,Nature,Sport\r
+           END:VEVENT\r
            """
   end
 
@@ -179,9 +179,9 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           STATUS:TENTATIVE
-           END:VEVENT
+           BEGIN:VEVENT\r
+           STATUS:TENTATIVE\r
+           END:VEVENT\r
            """
   end
 
@@ -193,9 +193,9 @@ defmodule ICalendar.EventTest do
       |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VEVENT
-           CLASS:PRIVATE
-           END:VEVENT
+           BEGIN:VEVENT\r
+           CLASS:PRIVATE\r
+           END:VEVENT\r
            """
   end
 end

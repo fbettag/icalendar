@@ -49,15 +49,15 @@ defimpl ICalendar.Serialize, for: ICalendar do
       ek = ek
            |> Atom.to_string()
            |> String.upcase()
-      acc <> "#{ek};VALUE=#{ev}\n"
+      acc <> "#{ek};VALUE=#{ev}\r\n"
     end)
 
     """
-    BEGIN:VCALENDAR
-    CALSCALE:GREGORIAN
-    VERSION:2.0
-    PRODID:-//ICalendar//#{vendor}//EN
-    #{extra}#{events}END:VCALENDAR
+    BEGIN:VCALENDAR\r
+    CALSCALE:GREGORIAN\r
+    VERSION:2.0\r
+    PRODID:-//ICalendar//#{vendor}//EN\r
+    #{extra}#{events}END:VCALENDAR\r
     """
   end
 end

@@ -26,8 +26,8 @@ defimpl ICalendar.Serialize, for: ICalendar.Event do
     contents = to_kvs(event)
 
     """
-    BEGIN:VEVENT
-    #{contents}END:VEVENT
+    BEGIN:VEVENT\r
+    #{contents}END:VEVENT\r
     """
   end
 

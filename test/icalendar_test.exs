@@ -7,11 +7,11 @@ defmodule ICalendarTest do
     ics = %ICalendar{} |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VCALENDAR
-           CALSCALE:GREGORIAN
-           VERSION:2.0
-           PRODID:-//ICalendar//ICalendar//EN
-           END:VCALENDAR
+           BEGIN:VCALENDAR\r
+           CALSCALE:GREGORIAN\r
+           VERSION:2.0\r
+           PRODID:-//ICalendar//ICalendar//EN\r
+           END:VCALENDAR\r
            """
   end
 
@@ -19,11 +19,11 @@ defmodule ICalendarTest do
     ics = %ICalendar{} |> ICalendar.to_ics(vendor: @vendor)
 
     assert ics == """
-           BEGIN:VCALENDAR
-           CALSCALE:GREGORIAN
-           VERSION:2.0
-           PRODID:-//ICalendar//#{@vendor}//EN
-           END:VCALENDAR
+           BEGIN:VCALENDAR\r
+           CALSCALE:GREGORIAN\r
+           VERSION:2.0\r
+           PRODID:-//ICalendar//#{@vendor}//EN\r
+           END:VCALENDAR\r
            """
   end
 
@@ -31,13 +31,13 @@ defmodule ICalendarTest do
     ics = %ICalendar{} |> ICalendar.to_ics([], "refresh-interval": "DURATION:P1W", source: "URI:http://some.where/foo.ics")
 
     assert ics == """
-           BEGIN:VCALENDAR
-           CALSCALE:GREGORIAN
-           VERSION:2.0
-           PRODID:-//ICalendar//ICalendar//EN
-           REFRESH-INTERVAL;VALUE=DURATION:P1W
-           SOURCE;VALUE=URI:http://some.where/foo.ics
-           END:VCALENDAR
+           BEGIN:VCALENDAR\r
+           CALSCALE:GREGORIAN\r
+           VERSION:2.0\r
+           PRODID:-//ICalendar//ICalendar//EN\r
+           REFRESH-INTERVAL;VALUE=DURATION:P1W\r
+           SOURCE;VALUE=URI:http://some.where/foo.ics\r
+           END:VCALENDAR\r
            """
   end
 
@@ -60,23 +60,23 @@ defmodule ICalendarTest do
     ics = %ICalendar{events: events} |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VCALENDAR
-           CALSCALE:GREGORIAN
-           VERSION:2.0
-           PRODID:-//ICalendar//ICalendar//EN
-           BEGIN:VEVENT
-           DESCRIPTION:Let's go see Star Wars.
-           DTEND:20151224T084500
-           DTSTART:20151224T083000
-           SUMMARY:Film with Amy and Adam
-           END:VEVENT
-           BEGIN:VEVENT
-           DESCRIPTION:A big long meeting with lots of details.
-           DTEND:20151224T223000
-           DTSTART:20151224T190000
-           SUMMARY:Morning meeting
-           END:VEVENT
-           END:VCALENDAR
+           BEGIN:VCALENDAR\r
+           CALSCALE:GREGORIAN\r
+           VERSION:2.0\r
+           PRODID:-//ICalendar//ICalendar//EN\r
+           BEGIN:VEVENT\r
+           DESCRIPTION:Let's go see Star Wars.\r
+           DTEND:20151224T084500\r
+           DTSTART:20151224T083000\r
+           SUMMARY:Film with Amy and Adam\r
+           END:VEVENT\r
+           BEGIN:VEVENT\r
+           DESCRIPTION:A big long meeting with lots of details.\r
+           DTEND:20151224T223000\r
+           DTSTART:20151224T190000\r
+           SUMMARY:Morning meeting\r
+           END:VEVENT\r
+           END:VCALENDAR\r
            """
   end
 
@@ -94,18 +94,18 @@ defmodule ICalendarTest do
     ics = %ICalendar{events: events} |> ICalendar.to_ics()
 
     assert ics == """
-           BEGIN:VCALENDAR
-           CALSCALE:GREGORIAN
-           VERSION:2.0
-           PRODID:-//ICalendar//ICalendar//EN
-           BEGIN:VEVENT
-           DESCRIPTION:Let's go see Star Wars\\, and have fun.
-           DTEND:20151224T084500
-           DTSTART:20151224T083000
-           LOCATION:123 Fun Street\\, Toronto ON\\, Canada
-           SUMMARY:Film with Amy and Adam
-           END:VEVENT
-           END:VCALENDAR
+           BEGIN:VCALENDAR\r
+           CALSCALE:GREGORIAN\r
+           VERSION:2.0\r
+           PRODID:-//ICalendar//ICalendar//EN\r
+           BEGIN:VEVENT\r
+           DESCRIPTION:Let's go see Star Wars\\, and have fun.\r
+           DTEND:20151224T084500\r
+           DTSTART:20151224T083000\r
+           LOCATION:123 Fun Street\\, Toronto ON\\, Canada\r
+           SUMMARY:Film with Amy and Adam\r
+           END:VEVENT\r
+           END:VCALENDAR\r
            """
   end
 
@@ -152,25 +152,25 @@ defmodule ICalendarTest do
     assert {:ok, ical} = ICalendar.encode_to_iodata(cal, [])
 
     assert ical == """
-           BEGIN:VCALENDAR
-           CALSCALE:GREGORIAN
-           VERSION:2.0
-           PRODID:-//ICalendar//ICalendar//EN
-           BEGIN:VEVENT
-           DESCRIPTION:Let's go see Star Wars.
-           DTEND:20151224T084500
-           DTSTAMP:20151224T080000
-           DTSTART:20151224T083000
-           SUMMARY:Film with Amy and Adam
-           END:VEVENT
-           BEGIN:VEVENT
-           DESCRIPTION:A big long meeting with lots of details.
-           DTEND:20151224T223000
-           DTSTAMP:20151224T180000
-           DTSTART:20151224T190000
-           SUMMARY:Morning meeting
-           END:VEVENT
-           END:VCALENDAR
+           BEGIN:VCALENDAR\r
+           CALSCALE:GREGORIAN\r
+           VERSION:2.0\r
+           PRODID:-//ICalendar//ICalendar//EN\r
+           BEGIN:VEVENT\r
+           DESCRIPTION:Let's go see Star Wars.\r
+           DTEND:20151224T084500\r
+           DTSTAMP:20151224T080000\r
+           DTSTART:20151224T083000\r
+           SUMMARY:Film with Amy and Adam\r
+           END:VEVENT\r
+           BEGIN:VEVENT\r
+           DESCRIPTION:A big long meeting with lots of details.\r
+           DTEND:20151224T223000\r
+           DTSTAMP:20151224T180000\r
+           DTSTART:20151224T190000\r
+           SUMMARY:Morning meeting\r
+           END:VEVENT\r
+           END:VCALENDAR\r
            """
   end
 
@@ -197,25 +197,25 @@ defmodule ICalendarTest do
     assert {:ok, ical} = ICalendar.encode_to_iodata(cal)
 
     assert ical == """
-           BEGIN:VCALENDAR
-           CALSCALE:GREGORIAN
-           VERSION:2.0
-           PRODID:-//ICalendar//ICalendar//EN
-           BEGIN:VEVENT
-           DESCRIPTION:Let's go see Star Wars.
-           DTEND:20151224T084500
-           DTSTAMP:20151224T080000
-           DTSTART:20151224T083000
-           SUMMARY:Film with Amy and Adam
-           END:VEVENT
-           BEGIN:VEVENT
-           DESCRIPTION:A big long meeting with lots of details.
-           DTEND:20151224T223000
-           DTSTAMP:20151224T180000
-           DTSTART:20151224T190000
-           SUMMARY:Morning meeting
-           END:VEVENT
-           END:VCALENDAR
+           BEGIN:VCALENDAR\r
+           CALSCALE:GREGORIAN\r
+           VERSION:2.0\r
+           PRODID:-//ICalendar//ICalendar//EN\r
+           BEGIN:VEVENT\r
+           DESCRIPTION:Let's go see Star Wars.\r
+           DTEND:20151224T084500\r
+           DTSTAMP:20151224T080000\r
+           DTSTART:20151224T083000\r
+           SUMMARY:Film with Amy and Adam\r
+           END:VEVENT\r
+           BEGIN:VEVENT\r
+           DESCRIPTION:A big long meeting with lots of details.\r
+           DTEND:20151224T223000\r
+           DTSTAMP:20151224T180000\r
+           DTSTART:20151224T190000\r
+           SUMMARY:Morning meeting\r
+           END:VEVENT\r
+           END:VCALENDAR\r
            """
   end
 end
