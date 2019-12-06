@@ -27,6 +27,20 @@ defmodule ICalendarTest do
            """
   end
 
+  test "ICalendar.to_ics/1 of empty calendar with extra parameters" do
+    ics = %ICalendar{} |> ICalendar.to_ics([], "refresh-interval": "DURATION:P1W", source: "URI:http://some.where/foo.ics")
+
+    assert ics == """
+           BEGIN:VCALENDAR
+           CALSCALE:GREGORIAN
+           VERSION:2.0
+           PRODID:-//ICalendar//ICalendar//EN
+           REFRESH-INTERVAL;VALUE=DURATION:P1W
+           SOURCE;VALUE=URI:http://some.where/foo.ics
+           END:VCALENDAR
+           """
+  end
+
   test "ICalendar.to_ics/1 of a calendar with an event, as in README" do
     events = [
       %ICalendar.Event{

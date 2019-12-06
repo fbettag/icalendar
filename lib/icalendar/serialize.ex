@@ -5,7 +5,7 @@ defprotocol ICalendar.Serialize do
   Supported options for serializing a calendar:
   * `vendor` a string containing the vendor's name. Will produce `PRODID:-//ICalendar//My Name//EN`.
   """
-  def to_ics(data, options \\ [])
+  def to_ics(data, options \\ [], extra \\ [])
 end
 
 alias ICalendar.Serialize
