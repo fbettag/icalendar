@@ -49,7 +49,7 @@ defimpl ICalendar.Serialize, for: ICalendar do
       ek = ek
            |> Atom.to_string()
            |> String.upcase()
-      acc <> "#{ek};VALUE=#{ev}\r\n"
+      acc <> "#{ek};#{ev}\r\n"
     end)
 
     """

@@ -35,8 +35,8 @@ defmodule ICalendarTest do
            CALSCALE:GREGORIAN\r
            VERSION:2.0\r
            PRODID:-//ICalendar//ICalendar//EN\r
-           REFRESH-INTERVAL;VALUE=DURATION:P1W\r
-           SOURCE;VALUE=URI:http://some.where/foo.ics\r
+           REFRESH-INTERVAL;DURATION:P1W\r
+           SOURCE;URI:http://some.where/foo.ics\r
            END:VCALENDAR\r
            """
   end
